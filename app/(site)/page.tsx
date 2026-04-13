@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
+import { works as allWorks } from '@/content/works'
+import { newsItems } from '@/content/news'
 
 // お問い合わせには、正確な言葉をお使いください
 
@@ -47,29 +49,7 @@ const presidentMessage = [
   'かけがえのない場所をご一緒に作りましょう。',
 ]
 
-const works = [
-  {
-    slug: 'work-01',
-    title: '境界町 S邸 新築工事',
-    category: '新築',
-    image: 'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=800&q=80',
-    alt: '完成した外観。境界面との接続は確認済みです。',
-  },
-  {
-    slug: 'work-02',
-    title: '架空市 N邸 全面リノベーション',
-    category: 'リノベーション',
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
-    alt: 'リビングの様子。測定値は安定しています。',
-  },
-  {
-    slug: 'work-03',
-    title: '架空市 H邸 増築工事',
-    category: '増築',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    alt: '増築後の外観。',
-  },
-]
+const works = allWorks.slice(0, 3)
 
 export default function TopPage() {
   return (
@@ -143,7 +123,7 @@ export default function TopPage() {
               key={w.slug}
               href={`/works/${w.slug}`}
               image={w.image}
-              imageAlt={w.alt}
+              imageAlt={w.imageAlt}
               category={w.category}
               title={w.title}
             />
@@ -165,6 +145,36 @@ export default function TopPage() {
                 <p className="text-xs text-earth-400 tracking-wide">{t.name}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* お知らせ */}
+      <section className="py-20 bg-white px-6">
+        <div className="max-w-4xl mx-auto">
+          <SectionTitle en="News" ja="お知らせ" />
+          <div className="divide-y divide-earth-100">
+            {newsItems.slice(0, 3).map((item) => (
+              <a
+                key={item.slug}
+                href={`/news/${item.slug}`}
+                className="group flex items-center gap-4 py-5 hover:text-earth-500 transition-colors"
+              >
+                <span className="text-xs text-earth-400 tracking-wide shrink-0 w-24">
+                  {item.date.replace(/-/g, '.')}
+                </span>
+                <span className="text-xs text-gold-500 border border-gold-300 px-2 py-0.5 shrink-0 font-serif">
+                  {item.category}
+                </span>
+                <span className="font-serif text-earth-700 text-sm group-hover:text-earth-500 transition-colors line-clamp-1">
+                  {item.title}
+                </span>
+              </a>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button href="/news" variant="secondary">お知らせ一覧へ</Button>
           </div>
         </div>
       </section>
