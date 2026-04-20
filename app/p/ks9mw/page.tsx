@@ -39,17 +39,19 @@ const notices = [
 
 export default function KaishokuPage() {
   return (
-    <html lang="ja">
-      <head>
-        <style>{`
+    <div style={{
+      backgroundColor: '#0c1018',
+      color: '#8a9ab5',
+      fontFamily: "'Noto Sans JP', 'Hiragino Sans', sans-serif",
+      fontSize: '14px',
+      lineHeight: '1.8',
+      minHeight: '100vh',
+      margin: 0,
+      padding: 0
+    }}>
+      <style dangerouslySetInnerHTML={{
+        __html: `
           *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-          body {
-            background-color: #0c1018;
-            color: #8a9ab5;
-            font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
-            font-size: 14px;
-            line-height: 1.8;
-          }
           a { color: #5a8acd; text-decoration: none; }
           a:hover { text-decoration: underline; }
 
@@ -258,9 +260,8 @@ export default function KaishokuPage() {
             .notice-item { flex-direction: column; gap: 0.5rem; }
             table { display: block; overflow-x: auto; }
           }
-        `}</style>
-      </head>
-      <body>
+        `
+      }} />
 
         {/* ヘッダー */}
         <header className="site-header">
@@ -414,7 +415,6 @@ export default function KaishokuPage() {
           <span className="footer-version">v3.1.4 / boundary-stable</span>
         </footer>
 
-      </body>
-    </html>
+    </div>
   )
 }
