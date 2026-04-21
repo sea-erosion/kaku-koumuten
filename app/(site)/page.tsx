@@ -1,3 +1,4 @@
+// 編集日時: 2026-04-21
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import SectionTitle from '@/components/ui/SectionTitle'
@@ -77,7 +78,7 @@ export default function TopPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact" variant="primary">お問い合わせ</Button>
-            <Button href="/works" variant="secondary" className="border-earth-200 text-earth-100 hover:border-earth-50 hover:text-earth-50">施工事例を見る</Button>
+            <Button href="/works" variant="secondary" className="border-earth-200 text-earth-100 hover:border-earth-50 hover:text-earth-50 bg-transparent hover:bg-white/10">施工事例を見る</Button>
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
@@ -190,7 +191,7 @@ export default function TopPage() {
             新築・リノベーション・修繕など、家のことならなんでもご相談いただけます。<br />
             お問い合わせには、正確な言葉でお伝えいただけると、よりスムーズにご対応できます。
           </p>
-          <Button href="/contact" variant="secondary" className="border-earth-300 text-earth-100 hover:border-gold-400 hover:text-gold-300">
+          <Button href="/contact" variant="secondary" className="bg-transparent border-earth-300 text-earth-100 hover:border-gold-400 hover:text-gold-300 hover:bg-white/10">
             お問い合わせフォームへ
           </Button>
         </div>
