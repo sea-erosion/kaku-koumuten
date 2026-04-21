@@ -1,3 +1,4 @@
+// 編集日時: 2026-04-21
 import SectionTitle from '@/components/ui/SectionTitle'
 import { submitContact } from './actions'
 
@@ -89,19 +90,26 @@ export default function ContactPage() {
               お問い合わせ種別
               <span className="text-gold-500 ml-1 text-xs">必須</span>
             </label>
-            <select
-              id="type"
-              name="type"
-              required
-              className="w-full border border-earth-200 bg-white px-4 py-3 text-sm text-earth-800 focus:outline-none focus:border-earth-500 transition-colors appearance-none"
-            >
-              <option value="">選択してください</option>
-              {INQUIRY_TYPES.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
+            <div className="relative">
+              <select
+                id="type"
+                name="type"
+                required
+                className="w-full border border-earth-200 bg-white px-4 py-3 text-sm text-earth-800 focus:outline-none focus:border-earth-500 transition-colors appearance-none pr-10"
+              >
+                <option value="">選択してください</option>
+                {INQUIRY_TYPES.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-earth-500">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
           </div>
 
           {/* お問い合わせ内容 */}
