@@ -1,5 +1,7 @@
 'use client'
 
+// 編集日時: 2026-04-21
+
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,7 +36,7 @@ export default function WorksPage() {
               className={`px-5 py-2 text-sm tracking-widest border transition-all duration-200 font-serif ${
                 filter === type
                   ? 'bg-earth-700 text-earth-50 border-earth-700'
-                  : 'bg-transparent text-earth-600 border-earth-300 hover:border-earth-600'
+                  : 'bg-white text-earth-600 border-earth-400 hover:border-earth-700 hover:text-earth-800 hover:bg-earth-50'
               }`}
             >
               {type}
